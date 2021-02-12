@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="684.0" prefWidth="520.0" styleClass="background" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Register">
+   <children>
+      <ImageView fitHeight="80.0" fitWidth="125.0" layoutX="114.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/images/graphfxlogo.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="237.0" layoutY="14.0" styleClass="label-header" text="Register" />
+      <Label layoutX="59.0" layoutY="162.0" styleClass="label2" text="ID Number:" />
+      <Label layoutX="59.0" layoutY="212.0" styleClass="label2" text="Lastname:" />
+      <Label layoutX="59.0" layoutY="262.0" styleClass="label2" text="Firstname:" />
+      <Label layoutX="59.0" layoutY="312.0" styleClass="label2" text="Middle Initial:" />
+      <Label layoutX="59.0" layoutY="362.0" styleClass="label2" text="Gender:" />
+      <Label layoutX="59.0" layoutY="512.0" styleClass="label2" text="Username:" />
+      <Label layoutX="59.0" layoutY="562.0" styleClass="label2" text="Password:" />
+      <Label layoutX="59.0" layoutY="412.0" styleClass="label2" text="Age:" />
+      <Label layoutX="59.0" layoutY="462.0" styleClass="label2" text="Course:" />
+      <TextField layoutX="184.0" layoutY="162.0" prefHeight="37.0" prefWidth="277.0" styleClass="textfield" />
+      <TextField layoutX="184.0" layoutY="212.0" prefHeight="37.0" prefWidth="277.0" styleClass="textfield" />
+      <TextField layoutX="184.0" layoutY="262.0" prefHeight="37.0" prefWidth="277.0" styleClass="textfield" />
+      <TextField layoutX="212.0" layoutY="312.0" prefHeight="37.0" prefWidth="96.0" styleClass="textfield" />
+      <TextField layoutX="184.0" layoutY="412.0" prefHeight="37.0" prefWidth="194.0" styleClass="textfield" />
+      <TextField layoutX="184.0" layoutY="462.0" prefHeight="37.0" prefWidth="277.0" styleClass="textfield" />
+      <TextField layoutX="184.0" layoutY="512.0" prefHeight="37.0" prefWidth="277.0" styleClass="textfield" />
+      <PasswordField layoutX="184.0" layoutY="562.0" prefHeight="37.0" prefWidth="277.0" styleClass="textfield" />
+      <Button layoutX="336.0" layoutY="617.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="125.0" text="Register" />
+      <Button layoutX="59.0" layoutY="617.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="125.0" text="Clear" />
+      <ChoiceBox fx:id="genderChoiceBox" layoutX="184.0" layoutY="362.0" prefWidth="150.0" styleClass="choicebox" />
+      <Label layoutX="59.0" layoutY="112.0" styleClass="label2" text="Occupation:" />
+      <ChoiceBox fx:id="occupChoiceBox" layoutX="184.0" layoutY="112.0" prefHeight="23.0" prefWidth="185.0" styleClass="choicebox" />
+   </children>
+</AnchorPane>

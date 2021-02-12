@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="300.0" prefWidth="217.0" styleClass="background" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SourceAndDeleteController">
+   <children>
+      <TextField fx:id="textFieldSourceSS" layoutX="69.0" layoutY="45.0" prefHeight="37.0" prefWidth="131.0" promptText="Source" />
+      <Label layoutX="13.0" layoutY="57.0" text="Vertex:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="selectButton" layoutX="115.0" layoutY="93.0" mnemonicParsing="false" onAction="#selectActionSS" prefHeight="33.0" prefWidth="87.0" text="Select" />
+      <Button layoutX="18.0" layoutY="93.0" mnemonicParsing="false" onAction="#clearFieldsSS" prefHeight="33.0" prefWidth="87.0" text="Clear" />
+      <Label layoutX="64.0" layoutY="14.0" text="Select Source">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="deleteButton" layoutX="117.0" layoutY="245.0" mnemonicParsing="false" onAction="#deleteVertexAction" prefHeight="33.0" prefWidth="87.0" text="Del" />
+      <Label layoutX="15.0" layoutY="209.0" text="Vertex">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldVertex" layoutX="71.0" layoutY="197.0" prefHeight="37.0" prefWidth="131.0" promptText="Vertex to delete" />
+      <Button layoutX="18.0" layoutY="245.0" mnemonicParsing="false" onAction="#clearFieldVertex" prefHeight="33.0" prefWidth="87.0" text="Clear" />
+      <Label layoutX="64.0" layoutY="168.0" text="Delete Vertex">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

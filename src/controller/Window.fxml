@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="685.0" prefWidth="1351.0" styleClass="background" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Window">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <Menu mnemonicParsing="false" text="New Graph">
+                    <items>
+                      <MenuItem fx:id="mnUndirectedGraph" mnemonicParsing="false" onAction="#undirectedGraph" text="Undirected Graph" />
+                        <MenuItem fx:id="mnDirectedGraph" mnemonicParsing="false" onAction="#directedGraph" text="Directed Graph" />
+                    </items>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" onAction="#loadGraph" text="Load            Ctrl+O" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveGraph" text="Save             Ctrl+S" />
+                  <MenuItem mnemonicParsing="false" onAction="#closeAction" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="mnNewVertex" mnemonicParsing="false" onAction="#enterAction" text="New Vertex" />
+                  <MenuItem fx:id="mnNewConnection" mnemonicParsing="false" onAction="#newConnectionAction" text="New Edge" />
+                  <MenuItem fx:id="mnSourceVertex" mnemonicParsing="false" onAction="#sourceVertexAction" text="Source Vertex" />
+                  <MenuItem fx:id="mnDeleteVertex" mnemonicParsing="false" onAction="#deleteAction" text="Delete Vertex" />
+              <MenuItem mnemonicParsing="false" onAction="#printAction" text="Print" />
+                  <MenuItem mnemonicParsing="false" onAction="#showAction" text="Show Names &amp; Weights" />
+                  <MenuItem mnemonicParsing="false" onAction="#hideAction" text="Hide Names &amp; Weights" />
+                  <MenuItem mnemonicParsing="false" onAction="#cancelButtonClicked" text="Delete Graph" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Components">
+               <items>
+                  <MenuItem fx:id="mnDirectedCycle" mnemonicParsing="false" text="Directed Cycle" />
+                  <MenuItem fx:id="mnInDegree" mnemonicParsing="false" onAction="#inDegreeAction" text="In Degree" />
+                  <MenuItem fx:id="mnOutDegree" mnemonicParsing="false" onAction="#outDegreeAction" text="Out Degree" />
+                  <MenuItem fx:id="mnAllDegree" mnemonicParsing="false" onAction="#allDegreeAction" text="All Degree" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Algorithms">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#dftAction" text="Depth-First Traversal" />
+                  <MenuItem mnemonicParsing="false" onAction="#bftAction" text="Breadth-First Traversal" />
+                  <MenuItem mnemonicParsing="false" onAction="#shortestPathAction" text="Shortest Path" />
+                  <MenuItem mnemonicParsing="false" onAction="#mstAction" text="Minimum Spanning Tree" />
+                  <MenuItem mnemonicParsing="false" onAction="#depthFirstTopologicalAction" text="Depth-First Topological Order" />
+                  <MenuItem mnemonicParsing="false" onAction="#breadthFirstTopologicalAction" text="Breadth-First Topological Order" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Adjacencies">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#adjacencyListAction" text="Adjacency List" />
+                  <MenuItem mnemonicParsing="false" onAction="#adjacencyMatrixAction" text="Adjacency Matrix" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Account">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#loginStudentEvent" text="Login" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#aboutAction" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label fx:id="graphTypeLabel" layoutX="1202.0" layoutY="18.0" text="Graph" />
+      <Label fx:id="statusLabel" layoutX="14.0" layoutY="651.0" text="Idle" />
+      <Button fx:id="restorebutton" layoutX="1245.0" layoutY="634.0" mnemonicParsing="false" onAction="#restoreAction" prefHeight="33.0" prefWidth="95.0" text="restore" />
+      <TableView fx:id="gridTableView" layoutX="1201.0" layoutY="52.0" prefHeight="531.0" prefWidth="136.0">
+        <columns>
+          <TableColumn fx:id="nodeColumn" minWidth="30.0" prefWidth="110.0" text="Vertices" />
+        </columns>
+      </TableView>
+      <Button fx:id="repositionButton" layoutX="575.0" layoutY="635.0" mnemonicParsing="false" onAction="#repositionAction" prefHeight="33.0" prefWidth="122.0" text="Reposition" />
+   </children>
+</AnchorPane>

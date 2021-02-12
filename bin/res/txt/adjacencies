@@ -1,0 +1,73 @@
+new Thread(new Runnable(){				
+				@Override
+				public void run()
+				{
+					for(Iterator<Vertex> sPList = sp.iterator(); sPList.hasNext();)
+					{
+						Vertex v = sPList.next();
+						sleep(400);
+						
+						Platform.runLater(new Runnable(){							
+							@Override
+							public void run()
+							{
+								CircleInfo c = v.getCircleInfo();
+								c.setThisColor(Color.YELLOWGREEN);
+								path.add(c);
+							}
+						});
+					}// end for loop
+					
+					int adv = 1;
+					for(int j = 0, h = path.size(); ((j < h) && (adv < h)); ++j)
+					{
+						for(Iterator<LineEdge> lIterator = lines.iterator(); lIterator.hasNext();)
+						{
+							LineEdge lEdge = lIterator.next();
+							CircleInfo start = lEdge.getStart();
+							CircleInfo end = lEdge.getEnd();
+							
+							if(start.equals(path.get(j)) && end.equals(path.get(adv)))
+							{
+								coloredEdges.add(lEdge);
+								break;
+							}
+						}
+						
+						++adv;
+						if(adv >= h)
+							break;
+					}	// end for loop
+					
+					for(LineEdge lineEdge : coloredEdges)
+					{
+						sleep(350);
+						
+						Platform.runLater(new Runnable(){
+							@Override
+							public void run()
+							{
+								root.getChildren().remove(lineEdge);
+								lineEdge.setStroke(Color.YELLOWGREEN);
+								root.getChildren().add(lineEdge);
+							}
+						});
+					}	// end for loop
+					
+					if(lastEdge != null)
+					{
+						sleep(350);
+						
+						Platform.runLater(new Runnable(){
+							@Override
+							public void run()
+							{
+								root.getChildren().remove(lastEdge);
+								lastEdge.setStroke(Color.YELLOWGREEN);
+								root.getChildren().add(lastEdge);
+								myWindow.idle();
+							}
+						});
+					}
+				}
+			}).start();

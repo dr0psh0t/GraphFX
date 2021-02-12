@@ -1,0 +1,22 @@
+					new Thread(new Runnable(){
+						@Override
+						public void run()
+						{
+							for(LineEdge lineEdge : coloredEdges)
+							{
+								try{
+									Thread.sleep(300);
+								}
+								catch(InterruptedException exc){
+									exc.printStackTrace();
+								}
+								
+								Platform.runLater(new Runnable(){
+									@Override
+									public void run(){
+										lineEdge.setStroke(Color.YELLOWGREEN);
+									}
+								});
+							}
+						}
+					}).start();

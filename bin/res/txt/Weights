@@ -1,0 +1,81 @@
+package model;
+
+import javafx.event.EventHandler;
+import javafx.scene.Cursor;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextBoundsType;
+
+public class Weights extends Text
+{
+	private double xPoint,
+	yPoint;
+	private LineEdge lineEdge;
+	
+	public Weights(String label)
+	{
+		super(label);
+		lineEdge = null;
+		initialize();
+	}
+	
+	public Weights(String label, LineEdge lineEdge)
+	{
+		super(label);
+		this.lineEdge = lineEdge;
+		initialize();
+	}
+	
+	public void initialize()
+	{
+		setCursor(Cursor.HAND);
+		setFill(Color.WHITE);
+		setBoundsType(TextBoundsType.VISUAL);
+		setStyle(
+                "-fx-font-family: \"Times New Roman\";" +
+                "-fx-font-style: italic;" +
+                "-fx-font-size: 30px;"
+        );
+		
+		setOnMousePressed(new EventHandler<MouseEvent>(){
+			@Override
+			public void handle(MouseEvent mouseEvent)
+			{
+				xPoint = getX() - mouseEvent.getX();
+				yPoint = getY() - mouseEvent.getY();
+			}
+		});
+		
+		setOnMouseDragged(new EventHandler<MouseEvent>(){
+			@Override
+			public void handle(MouseEvent event)
+			{
+				setX(event.getX() - xPoint);
+				setY(event.getY() - yPoint);
+			}
+		});
+	}
+	
+	public void setLine(LineEdge lineEdge){
+		this.lineEdge = lineEdge;
+	}
+	
+	public LineEdge getLine(){
+		return lineEdge;
+	}
+	
+	public void updatePos()
+	{
+		setX(getMidpointX(lineEdge));
+		setY(getMidpointY(lineEdge));
+	}
+	
+	private double getMidpointX(LineEdge lineEdge){
+		return (lineEdge.getStartX() + lineEdge.getEndX()) / 2;
+	}
+	
+	private double getMidpointY(LineEdge lineEdge){
+		return (lineEdge.getStartY() + lineEdge.getEndY()) / 2;
+	}
+}

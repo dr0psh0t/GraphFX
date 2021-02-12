@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="495.0" prefWidth="217.0" styleClass="background" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreateController">
+   <children>
+      <Label layoutX="11.0" layoutY="101.0" text="Source:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="12.0" layoutY="54.0" text="Vertex:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldVertexCV" layoutX="71.0" layoutY="52.0" prefHeight="37.0" prefWidth="131.0" promptText="vertex name" />
+      <TextField fx:id="textFieldSourceCV" layoutX="70.0" layoutY="99.0" prefHeight="37.0" prefWidth="131.0" promptText="source vertex" />
+      <Label layoutX="12.0" layoutY="154.0" text="Weight:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldEdgeWeightCV" layoutX="69.0" layoutY="146.0" prefHeight="37.0" prefWidth="131.0" promptText="edge weight" />
+      <Button layoutX="113.0" layoutY="193.0" mnemonicParsing="false" onAction="#okayActionCV" prefHeight="27.0" prefWidth="87.0" text="Okay" />
+      <Button layoutX="16.0" layoutY="193.0" mnemonicParsing="false" onAction="#clearFieldsCV" prefHeight="33.0" prefWidth="87.0" text="Clear" />
+      <Label layoutX="63.0" layoutY="14.0" text="Create a vertex">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="347.0" text="Source:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="300.0" text="Vertex:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldVertexNE" layoutX="71.0" layoutY="296.0" prefHeight="37.0" prefWidth="131.0" promptText="vertex name" />
+      <TextField fx:id="textFieldSourceNE" layoutX="71.0" layoutY="344.0" prefHeight="37.0" prefWidth="131.0" promptText="source vertex" />
+      <Label layoutX="16.0" layoutY="400.0" text="Weight:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFieldEdgeWeightNE" layoutX="71.0" layoutY="392.0" prefHeight="37.0" prefWidth="131.0" promptText="edge weight" />
+      <Button layoutX="116.0" layoutY="442.0" mnemonicParsing="false" onAction="#connectActionNE" prefHeight="33.0" prefWidth="87.0" text="Okay" />
+      <Button layoutX="19.0" layoutY="442.0" mnemonicParsing="false" onAction="#clearFieldsNE" prefHeight="33.0" prefWidth="87.0" text="Clear" />
+      <Label layoutX="82.0" layoutY="265.0" text="New Edge">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
